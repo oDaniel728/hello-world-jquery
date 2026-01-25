@@ -1,0 +1,39 @@
+name: Deploy Static Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+
+        with:
+          node-version: "20"
+
+      - name: Install Depedencies
+        run: npm install
+
+      - name: Compile Typescript
+        run: npx tsc -p tsconfig.json
+      
+      - name: Copy HTML and JS Scripts to deploy Folder
+        run: |
+          mkdir -p deploy
+          cp index.html deploy
+          cp scripts/*.js deploy
+
+      - name: Deploy to 'pages' branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./deploy
+          publish_branch: pages
