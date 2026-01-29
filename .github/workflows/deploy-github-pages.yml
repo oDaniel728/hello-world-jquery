@@ -20,4 +20,4 @@ jobs:
         run: npx tsc
       
       - name: Compress index
-        run: inline-source --root . index.html --out dist/index.html
+        run: npx inline-source --root . index.html --out dist/index.html
