@@ -23,10 +23,9 @@ jobs:
 
       - name: new folder Deploy
         run: |
-          mkdir -p deploy
           mkdir -p deploy/scripts
-          cp -R scripts/* deploy/scripts/
-          cp **/*.html deploy
+          cp -R scripts/*.js deploy/scripts/ || true
+          find . -maxdepth 1 -name "*.html" -exec cp {} deploy/ \;
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v4
