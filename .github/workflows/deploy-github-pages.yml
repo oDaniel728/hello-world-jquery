@@ -18,6 +18,3 @@ jobs:
       
       - name: Build TypeScript
         run: npx tsc
-      
-      - name: Compress index
-        run: npx inline-source --root . index.html --out dist/index.html
