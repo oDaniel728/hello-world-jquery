@@ -1,6 +1,6 @@
-# hello-world
+# js-click-me
 
-Um projeto "hello world" onde você gera uma mensagem "Olá, \<nome\>!" para qualquer nome.
+Um projeto "hello world" onde você pode alterar o estado de uma div.
 
 ## 📌 Índice
 - [Sobre](#-sobre)
@@ -25,10 +25,10 @@ Passo a passo para rodar o projeto localmente.
 
 ```sh
 # clone o repositório
-git clone https://github.com/oDaniel728/hello-world-js
+git clone https://github.com/oDaniel728/js-click-me 
 
 # entre na pasta
-cd projeto
+cd js-click-me
 
 # instale as dependências
 npm install
@@ -38,7 +38,8 @@ npx tsc
 ```
 
 ## ▶️ Uso
-Rode abrindo o `index.html` ou usando o **Live Server**
+Rode abrindo o `index.html` ou usando o **Live Server**(VSCode)  
+E no terminal, rode `npx tsc --watch`.
 
 ## 📂 Estrutura do Projeto
 
@@ -48,8 +49,6 @@ Rode abrindo o `index.html` ou usando o **Live Server**
 - [index.html](index.html) - página principal
 
 ```text
-scripts/
- └─ index.js
 scripts-ts/
  └─ index.ts
 index.html
