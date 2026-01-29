@@ -22,7 +22,7 @@ jobs:
         run: npx tsc
 
       - name: new folder Deploy
-        run:
+        run: |
           mkdir -p deploy
           cp -R scripts/* deploy
           cp **/*.html deploy
