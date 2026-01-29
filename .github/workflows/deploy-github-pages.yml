@@ -24,7 +24,8 @@ jobs:
       - name: new folder Deploy
         run: |
           mkdir -p deploy
-          cp -R scripts/* deploy
+          mkdir -p deploy/scripts
+          cp -R scripts/* deploy/scripts
           cp **/*.html deploy
 
       - name: Deploy
